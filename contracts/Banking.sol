@@ -1,52 +1,56 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-contract Bank {
-    // Struct to store user profile information
-    struct UserProfile {
-        string name;     // User's name
-        address userAddress; // User's address
-        uint256 balance; // User's balance
+contract bank {
+    mapping(address => uint64) public record;
+
+    // uint64 public MinDepAmt = 250000000000000 wei;
+    // uint64 public MaxWithdAmt = 2 ether;
+
+
+
+    modifier CheckMinDepAmt(uint64 amt) {
+        // MinDepAmt
+        require(amt >= 250000000000000, "Minimun Deposit amount is 0.25 Ether");
+        _;
     }
 
-    // Mapping from user address to user profile
-    mapping (address => UserProfile) public userProfiles;
-
-    // Minimum deposit amount set to 1 ether
-    uint256 public constant MIN_DEPOSIT = 1 ether;
-
-    // Maximum withdrawal limit set to 5 ether
-    uint256 public constant MAX_WITHDRAWAL = 5 ether;
-
-    // Function to create or update a user's profile
-    function setUserProfile(string memory _name) public {
-        userProfiles[msg.sender].name = _name;
-        userProfiles[msg.sender].userAddress = msg.sender;
+    modifier CheckMaxWithdAmt(uint64 amt) {
+        // MaxWithdAmt
+        require(amt <= 2000000000000000000, "Max Withdrawal Amount is 2 Ether");
+        _;
     }
 
-    // Set a minimum amount for deposit
-    function deposit(uint256 amount) public {
-        require(amount >= MIN_DEPOSIT, "Deposit amount is too small.");
-        userProfiles[msg.sender].balance += amount;
+    modifier VerifyAddr(address addr) {
+        require(!ContractAddr(addr), "This is a contract address!");
+        _;
     }
 
-    // Deposit function using payable for receiving ether
-    function _deposit() public payable {
-        require(msg.value >= MIN_DEPOSIT, "Deposit amount is too small.");
-        userProfiles[msg.sender].balance += msg.value;
+    // set a minimum amount for deposit
+    function deposit(address DepAddr, uint64 DepAmt)
+        public
+        VerifyAddr(DepAddr) // ensure the caller is not a contract address
+        CheckMinDepAmt(DepAmt)
+    {
+        record[DepAddr] += DepAmt;
     }
 
-    // Set a maximum amount for withdrawal (withdrawal limit)
-    function withdraw(uint256 _amount) public {
-        require(_amount <= MAX_WITHDRAWAL, "Withdrawal amount exceeds the maximum limit.");
-        require(userProfiles[msg.sender].balance >= _amount, "Insufficient balance.");
-        userProfiles[msg.sender].balance -= _amount;
-        payable(msg.sender).transfer(_amount);
+    // set a maximum amount for withdrawal (withdrawal limit)
+    function withdraw(address WithdAddr, uint64 WithdAmt)
+        public
+        VerifyAddr(WithdAddr)
+        CheckMaxWithdAmt(WithdAmt)
+    {
+        record[WithdAddr] -= WithdAmt;
     }
 
-    // Function to get a user's profile information
-    function getUserProfile(address _user) public view returns (string memory, address, uint256) {
-        UserProfile memory user = userProfiles[_user];
-        return (user.name, user.userAddress, user.balance);
+    // Helper function to check for contract address
+    function ContractAddr(address _addr) internal view returns (bool) {
+        return _addr.code.length > 0;
+    }
+
+    // Check user ballance
+    function GetBalance(address UserAddr) public view returns (uint64) {
+        return record[UserAddr];
     }
 }

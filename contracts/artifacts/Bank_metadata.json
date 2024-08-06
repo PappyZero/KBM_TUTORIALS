@@ -149,7 +149,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Banking.sol": "Bank"
+			"contracts/Bank.sol": "Bank"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -163,7 +163,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Banking.sol": {
+		"contracts/Bank.sol": {
 			"keccak256": "0x11571df80f8196b142eb73104ca1be20bbff45b3550998fe076c43e4d4ded813",
 			"license": "MIT",
 			"urls": [

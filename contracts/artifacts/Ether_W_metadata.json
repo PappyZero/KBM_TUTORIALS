@@ -101,7 +101,7 @@
 				"name": "transactionState",
 				"outputs": [
 					{
-						"internalType": "enum Bank.TransactionState",
+						"internalType": "enum Ether_W.TransactionState",
 						"name": "",
 						"type": "uint8"
 					}
@@ -170,7 +170,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Ether_Wallet.sol": "Bank"
+			"contracts/Ether_Wallet.sol": "Ether_W"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -185,11 +185,11 @@
 	},
 	"sources": {
 		"contracts/Ether_Wallet.sol": {
-			"keccak256": "0xab4bc589d36593c09269b9f87d33f129b38f7b9fedec54741943deda575abbcf",
+			"keccak256": "0x52d0a3c418d03afa08af9a10d26df7329fffd5a31fa3b27991336416b80e2b8e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fa34daf93426c19407af12270e46f19ba14ad810e375ebeb59ab8e66b031a303",
-				"dweb:/ipfs/QmZfCb73qffEA53xKjVj2iNcP8DckzsMfJ8sbKqCh3kN4k"
+				"bzz-raw://d775064502a1191023aac4cc7472024fb42837622f993d99799092df7b3d4fe0",
+				"dweb:/ipfs/QmXv7Fok52f2GZesH1RuMNx3Pdfsbrgu6oz6c1tx4YShVH"
 			]
 		}
 	},

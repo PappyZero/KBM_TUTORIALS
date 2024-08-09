@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "deposited_ether",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Payable_Modifier.sol": "Payable_Modifier"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Payable_Modifier.sol": {
+			"keccak256": "0x4dc751f74283f3c641edc3c6296cf088675ae48f9e6300c2779ae2afd7dc01a2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0be2137622545702e1322cd5246c920eaf7f90b688d3e4232b52e5956d1dc3d9",
+				"dweb:/ipfs/QmbpA6p4AjjHiQBSeVDXiYZPCz2P4RP5et2udycXGDFDxD"
+			]
+		}
+	},
+	"version": 1
+}

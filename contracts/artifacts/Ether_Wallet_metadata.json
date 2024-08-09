@@ -7,6 +7,11 @@
 		"abi": [
 			{
 				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
 				"name": "MAX_WITHDRAWAL",
 				"outputs": [
 					{
@@ -79,6 +84,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -101,7 +119,7 @@
 				"name": "transactionState",
 				"outputs": [
 					{
-						"internalType": "enum Bank.TransactionState",
+						"internalType": "enum Ether_Wallet.TransactionState",
 						"name": "",
 						"type": "uint8"
 					}
@@ -170,7 +188,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Ether_Wallet.sol": "Bank"
+			"contracts/Ether_Wallet.sol": "Ether_Wallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -185,11 +203,11 @@
 	},
 	"sources": {
 		"contracts/Ether_Wallet.sol": {
-			"keccak256": "0xab4bc589d36593c09269b9f87d33f129b38f7b9fedec54741943deda575abbcf",
+			"keccak256": "0x5774e51d5f530ae9719ba29be20845ff7fe1532bf00d0395636f65d8925447f7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fa34daf93426c19407af12270e46f19ba14ad810e375ebeb59ab8e66b031a303",
-				"dweb:/ipfs/QmZfCb73qffEA53xKjVj2iNcP8DckzsMfJ8sbKqCh3kN4k"
+				"bzz-raw://f113b79870dbeb3b2554424ddfe3c6709a4a9ed3fbc71b982ffcd8a0d3cc49cd",
+				"dweb:/ipfs/Qmc1oc3vCZNmZvgtoszmKpFCZMahQjCmaAaM33oRbfYy5o"
 			]
 		}
 	},

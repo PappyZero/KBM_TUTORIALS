@@ -97,19 +97,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "transactionState",
-				"outputs": [
-					{
-						"internalType": "enum Bank.TransactionState",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -170,7 +157,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Ether_Wallet.sol": "Bank"
+			"contracts/Bank.sol": "Bank"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -184,12 +171,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Ether_Wallet.sol": {
-			"keccak256": "0xab4bc589d36593c09269b9f87d33f129b38f7b9fedec54741943deda575abbcf",
+		"contracts/Bank.sol": {
+			"keccak256": "0xa49a4038dce68ca821cb2265f974c77848397164047c631150f3096c36719ec8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fa34daf93426c19407af12270e46f19ba14ad810e375ebeb59ab8e66b031a303",
-				"dweb:/ipfs/QmZfCb73qffEA53xKjVj2iNcP8DckzsMfJ8sbKqCh3kN4k"
+				"bzz-raw://4e4fc21809b272f825a6f275c999f1ff9e8af548d29ffcc2dacdc6a3ad5091eb",
+				"dweb:/ipfs/QmUuApNxRDPffAd5HrTBUsGSjp67D1P6UcXo74162XvdYh"
 			]
 		}
 	},

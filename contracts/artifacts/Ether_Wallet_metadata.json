@@ -99,14 +99,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
 						"internalType": "address",
 						"name": "_addr",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
 					}
 				],
 				"name": "setUserProfile",
@@ -171,7 +171,7 @@
 				],
 				"name": "withdraw",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			}
 		],
@@ -188,7 +188,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Ether_Wallet.sol": "Ether_Wallet"
+			"contracts/enums.sol": "Ether_Wallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -202,12 +202,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Ether_Wallet.sol": {
-			"keccak256": "0xcede0a99c01d72eefe8c0eb659455793a29a9c962941bff8bf1a3359c8d39427",
+		"contracts/enums.sol": {
+			"keccak256": "0xea447907742fc93d28073089bcbd38ede0d815f52244d33aa2a59255900d9f49",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b64196db09937bb90cd32c4aae032a8e357f5de5499eca87a02cd40fbc8434c9",
-				"dweb:/ipfs/QmPsKHxtCbYSVRE8PuTEoWQ6k6Piz6ZZQrpoWLxxiaH6EQ"
+				"bzz-raw://803c83f65edcab23c50f5f71223c040df0713c008863e1fa67fb7ae1bb9f9dc6",
+				"dweb:/ipfs/QmeM1e8zJdWLPAYJHQeaVeQEEf26QCYw8PhJnAqScHNcTM"
 			]
 		}
 	},

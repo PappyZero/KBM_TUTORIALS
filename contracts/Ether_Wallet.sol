@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-contract Ether_Wallet {
+contract Bank {
     // Struct to store user profile information
-    struct UserProfile {
+    struct UserProfile 
+    {
         string name;          // User's name
         address userAddress;  // User's address
         uint256 balance;      // User's balance
@@ -16,15 +17,6 @@ contract Ether_Wallet {
     // Mapping from user address to user profile
     mapping(address => UserProfile) public userProfiles;
 
-
-    // Defining a variable "owner", and giving it "payable" so that only the owner can send Ether out.
-    address payable public owner;
-
-    // Initializing the state variable inside a constructor. 
-    constructor() {
-        owner = payable (msg.sender);
-    }
-
     // Minimum deposit amount set to 1 ether
     uint256 public constant MIN_DEPOSIT = 1 ether;
 
@@ -32,13 +24,15 @@ contract Ether_Wallet {
     uint256 public constant MAX_WITHDRAWAL = 5 ether;
 
     // Modifier to set the transaction state
-    modifier updateTransactionState(bool success) {
+    modifier updateTransactionState(bool success) 
+    {
         transactionState = success ? TransactionState.Successful : TransactionState.Failed;
         _;
     }
 
     // Function to create or update a user's profile
-    function setUserProfile(string memory _name, address _addr) public {
+    function setUserProfile(string memory _name, address _addr) public 
+    {
         userProfiles[_addr].name = _name;
         userProfiles[_addr].userAddress = _addr;
     }
@@ -53,9 +47,6 @@ contract Ether_Wallet {
     function withdraw(address _addr, uint256 _amount) public updateTransactionState(_amount <= MAX_WITHDRAWAL && userProfiles[_addr].balance >= _amount) {
         require(_amount <= MAX_WITHDRAWAL, "Withdrawal amount exceeds the maximum limit.");
         require(userProfiles[_addr].balance >= _amount, "Insufficient balance.");
-        // Using "require" so only the owner will be able to call this function. 
-        require(msg.sender == owner, "The caller is not the owner.");
-        owner.transfer(_amount);
         userProfiles[_addr].balance -= _amount;
         // payable(_addr).transfer(_amount);
     }

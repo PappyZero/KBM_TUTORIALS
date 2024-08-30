@@ -3,7 +3,8 @@ pragma solidity ^0.8.24;
 
 contract Bank {
     // Struct to store user profile information
-    struct UserProfile {
+    struct UserProfile 
+    {
         string name;     // User's name
         address userAddress; // User's address
         uint256 balance; // User's balance
@@ -19,7 +20,8 @@ contract Bank {
     uint256 public constant MAX_WITHDRAWAL = 5 ether;
 
     // Function to create or update a user's profile
-    function setUserProfile(string memory _name, address _addr) public {
+    function setUserProfile(string memory _name, address _addr) public 
+    {
         userProfiles[_addr].name = _name;
         userProfiles[_addr].userAddress = _addr;
     }
